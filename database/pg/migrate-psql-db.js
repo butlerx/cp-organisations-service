@@ -6,7 +6,7 @@ module.exports = function migrate (cb) {
     migrationDirectory: './database/pg/migrations',
     driver: 'pg',
     host: config['postgresql-store'].host,
-    schemaTable: 'cp_organisations_schema.org_schemaversion',
+    schemaTable: 'org_schemaversion',
     database: config['postgresql-store'].name,
     username: config['postgresql-store'].username,
     password: config['postgresql-store'].password,
