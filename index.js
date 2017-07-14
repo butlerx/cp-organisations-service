@@ -21,7 +21,7 @@ function shutdown (err) {
 }
 
 process.on('SIGUSR2', function () {
-  var snapshot = '/tmp/cp-eventbrite-service-' + Date.now() + '.heapsnapshot';
+  var snapshot = '/tmp/cp-organisations-service-' + Date.now() + '.heapsnapshot';
   console.log('Got SIGUSR2, creating heap snapshot: ', snapshot);
   heapdump.writeSnapshot(snapshot, function (err, filename) {
     if (err) console.error('Error creating snapshot:', err);
@@ -31,6 +31,7 @@ process.on('SIGUSR2', function () {
 
 require('./database/pg/migrate-psql-db.js')(function (err) {
   if (err) {
+    console.log('Migrations Nok for ' + service);
     console.error(err);
     process.exit(-1);
   }
