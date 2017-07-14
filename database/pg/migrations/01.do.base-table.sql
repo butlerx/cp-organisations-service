@@ -1,5 +1,4 @@
 
-
 CREATE TABLE IF NOT EXISTS cd_organisations (
   id character varying NOT NULL,
   name character varying NOT NULL,
