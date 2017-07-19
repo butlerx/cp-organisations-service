@@ -13,7 +13,7 @@ deployment:
   production:
     branch: master
     codedeploy:
-      cp-events-service:
+      cp-organisations-service:
         application_root: /
         region: eu-west-1
         revision_location:
@@ -26,7 +26,7 @@ deployment:
   staging:
     branch: staging
     codedeploy:
-      cp-events-service-staging:
+      cp-organisations-service-staging:
         application_root: /
         region: eu-west-1
         revision_location:
