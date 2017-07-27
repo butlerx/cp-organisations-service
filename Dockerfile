@@ -10,4 +10,4 @@ RUN npm install && \
     apk del build-base python && \
     rm -rf /tmp/* /root/.npm /root/.node-gyp
 EXPOSE 10309
-CMD ["node", "service.js"]
+CMD ["npm", "start"]
