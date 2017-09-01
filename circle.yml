@@ -1,17 +1,17 @@
 ---
 machine:
   node:
-    version: 0.10.40
+    version: 8.4.0
   services:
     - docker
   environment:
     LANG: en_US.utf8
 dependencies:
   override:
-    - npm install
+    - yarn
 test:
   override:
-    - npm run test
+    - yarn test
 deployment:
   production:
     branch: master
