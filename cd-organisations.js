@@ -31,7 +31,7 @@ function cdOrganisations() {
   // Load primitives
   [org, userOrg].forEach((entity) => {
     acts[entity.name] = {};
-    entity.acts.forEach(({ validation, cb }, key) => {
+    Object.entries(entity.acts).forEach(([key, { validation, cb }]) => {
       const act = _.extend(
         {
           role: plugin,
@@ -52,7 +52,7 @@ function cdOrganisations() {
   ctrls.org = orgController.bind(seneca)();
   ctrls.userOrg = userOrgController.bind(seneca)();
   _.each(ctrls, (ctrl, entity) => {
-    ctrl.acts.forEach(({ validation, cb }, key) => {
+    Object.entries(ctrl.acts).forEach(([key, { validation, cb }]) => {
       const act = _.extend(
         {
           role: plugin,

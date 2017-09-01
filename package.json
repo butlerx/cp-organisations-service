@@ -12,7 +12,10 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": ["organisation", "coderdojo"],
+  "keywords": [
+    "organisation",
+    "coderdojo"
+  ],
   "author": "Coderdojo",
   "license": "ISC",
   "devDependencies": {
