@@ -22,15 +22,9 @@ jobs:
             if [ "$CIRCLE_BRANCH" = "staging" ]; then
               yarn add cp-translations@staging
             fi
-  test:
-    working_directory: ~/cp-organisations-service
-    docker:
-      - image: node:8.4
-    steps:
-      - checkout
       - run:
-        name: Tests
-        command: yarn test
+          name: Tests
+          command: yarn test
   deploy:
     working_directory: ~/cp-organisations-service
     docker:
@@ -46,14 +40,11 @@ workflows:
   build-test-and-deploy:
     jobs:
       - build
-      - test:
-        requires:
-          - build
       - deploy:
-        requires:
-          - test:
-        filters:
-          branches:
-            only:
-              - master
-              - staging
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+                - staging
