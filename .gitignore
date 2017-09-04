@@ -60,3 +60,4 @@ typings/
 # dotenv environment variables file
 .env
 .pkg.sha1
+.yarn.sha1

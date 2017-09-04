@@ -1,7 +1,7 @@
-var postgrator = require('postgrator');
-var config = require('./../../config/config.js')();
+const postgrator = require('postgrator');
+const config = require('./../../config/config.js')();
 
-module.exports = function migrate (cb) {
+module.exports = function migrate(cb) {
   postgrator.setConfig({
     migrationDirectory: './database/pg/migrations',
     driver: 'pg',
@@ -10,15 +10,15 @@ module.exports = function migrate (cb) {
     database: config['postgresql-store'].name,
     username: config['postgresql-store'].username,
     password: config['postgresql-store'].password,
-    newline: 'LF'
+    newline: 'LF',
   });
-  postgrator.runQuery('CREATE SCHEMA IF NOT EXISTS "cp_organisations_schema";SET search_path TO "cp_organisations_schema";',
-  function (err, res) {
-    if (err) return cb(err);
-    postgrator.migrate('max', function (err, migrations) {
-      postgrator.endConnection(function () {
-        return cb(err, migrations);
+  postgrator.runQuery(
+    'CREATE SCHEMA IF NOT EXISTS "cp_organisations_schema";SET search_path TO "cp_organisations_schema";',
+    (err) => {
+      if (err) return cb(err);
+      postgrator.migrate('max', (err, migrations) => {
+        postgrator.endConnection(() => cb(err, migrations));
       });
-    });
-  });
+    },
+  );
 };
