@@ -1,7 +1,6 @@
 const service = 'cp-organisations-service';
 const store = require('seneca-postgres-store');
 const util = require('util');
-const heapdump = require('heapdump');
 const dgram = require('dgram');
 const config = require('./config/config.js')();
 const seneca = require('./imports')(config);
@@ -12,6 +11,7 @@ seneca.use(store, config['postgresql-store']);
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);
 process.on('uncaughtException', shutdown);
+process.on('SIGUSR2', shutdown);
 
 function shutdown(err) {
   if (err !== undefined && err.stack !== undefined) {
@@ -23,15 +23,6 @@ function shutdown(err) {
   }
   process.exit(0);
 }
-
-process.on('SIGUSR2', () => {
-  const snapshot = `/tmp/cp-organisations-service-${Date.now()}.heapsnapshot`;
-  console.log('Got SIGUSR2, creating heap snapshot: ', snapshot);
-  heapdump.writeSnapshot(snapshot, (err, filename) => {
-    if (err) console.error('Error creating snapshot:', err);
-    console.log('dump written to', filename);
-  });
-});
 
 require('./database/pg/migrate-psql-db.js')((err) => {
   if (err) {
