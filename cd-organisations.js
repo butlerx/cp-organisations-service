@@ -4,6 +4,8 @@ const orgEntity = require('./lib/organisations/entities/org');
 const userOrgEntity = require('./lib/organisations/entities/userOrg');
 const orgController = require('./lib/organisations/controllers/org/index');
 const userOrgController = require('./lib/organisations/controllers/userOrg/index');
+//  Utils
+const pingCmd = require('./lib/ping');
 
 function cdOrganisations() {
   // https://github.com/senecajs/seneca/issues/112
@@ -69,7 +71,7 @@ function cdOrganisations() {
   });
 
   // Load utilities
-  // -> none atm
+  seneca.add({ role: plugin, cmd: 'ping' }, pingCmd);
 
   return {
     name: plugin,
