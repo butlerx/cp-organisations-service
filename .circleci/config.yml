@@ -23,8 +23,14 @@ jobs:
               yarn add cp-translations@staging
             fi
       - run:
-          name: Tests
+          name: Unit Tests
           command: yarn test
+      - run:
+          name: Test joi
+          command: yarn test-joi
+      - run:
+          name: Test skeleton
+          command: yarn test-skeleton
   deploy:
     working_directory: ~/cp-organisations-service
     docker:

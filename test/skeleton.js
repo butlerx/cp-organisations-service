@@ -3,7 +3,7 @@ require('../network')(seneca);
 const _ = require('lodash');
 const flat = require('flat');
 
-const service = 'cd-eventbrite';
+const service = 'cd-organisations';
 // ENTITIES
 const entities = {};
 entities.userOrg = require('../lib/organisations/entities/userOrg.js').bind(seneca)();
@@ -70,15 +70,15 @@ describe('cp-organisations-service-controller', () => {
   // // VALIDATION
   // No need to validate them all, we just want to verify the bootloader (/lib/index)
   it('should validate entities acts with joi', (done) => {
-    seneca.act({ role: 'cd-organisations', entity: 'event', cmd: 'get', id: {} }, (err, app) => {
+    seneca.act({ role: 'cd-organisations', entity: 'org', cmd: 'get'}, (err, app) => {
       expect(err.code).to.be.equal('act_invalid_msg');
       done();
     });
   });
   //
   it('should validate entities acts while promised with joi', (done) => {
-    const app = seneca.export('cd-organisations/acts').event;
-    app.get({ id: {} })
+    const app = seneca.export('cd-organisations/acts').org;
+    app.get({ org: undefined})
       .catch((err) => {
         expect(err.code).to.be.equal('act_invalid_msg');
         done();
@@ -86,7 +86,7 @@ describe('cp-organisations-service-controller', () => {
   });
   //
   it('should validate controllers acts with joi', (done) => {
-    seneca.act({ role: 'cd-organisations', ctrl: 'auth', cmd: 'authorize', dojoId: {} }, (err, app) => {
+    seneca.act({ role: 'cd-organisations', ctrl: 'userOrg', cmd: 'create', userOrg: {} }, (err, app) => {
       expect(err.code).to.be.equal('act_invalid_msg');
       done();
     });
