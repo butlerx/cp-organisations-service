@@ -52,6 +52,24 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+amqplib@^0.5.1:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/amqplib/-/amqplib-0.5.2.tgz#d2d7313c7ffaa4d10bcf1e6252de4591b6cc7b63"
+  dependencies:
+    bitsyntax "~0.0.4"
+    bluebird "^3.4.6"
+    buffer-more-ints "0.0.2"
+    readable-stream "1.x >=1.1.9"
+    safe-buffer "^5.0.1"
+
+amqpuri@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/amqpuri/-/amqpuri-1.1.0.tgz#bf842df0e5095c303eb4f255539b2763b1b4062b"
+  dependencies:
+    lodash.curry "^4.1.1"
+    lodash.flowright "^3.5.0"
+    lodash.pick "^4.4.0"
+
 ansi-escapes@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-2.0.0.tgz#5bae52be424878dd9783e8910e3fc2922e83c81b"
@@ -256,6 +274,12 @@ binary-extensions@^1.0.0:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.10.0.tgz#9aeb9a6c5e88638aad171e167f5900abe24835d0"
 
+bitsyntax@~0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/bitsyntax/-/bitsyntax-0.0.4.tgz#eb10cc6f82b8c490e3e85698f07e83d46e0cba82"
+  dependencies:
+    buffer-more-ints "0.0.2"
+
 bl@^1.0.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/bl/-/bl-1.2.1.tgz#cac328f7bee45730d404b692203fcb590e172d5e"
@@ -267,6 +291,10 @@ block-stream@*:
   resolved "https://registry.yarnpkg.com/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"
   dependencies:
     inherits "~2.0.0"
+
+bluebird@^3.4.6, bluebird@^3.5.0:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
 bluebird@^3.4.7:
   version "3.5.0"
@@ -299,6 +327,10 @@ braces@^1.8.2:
     expand-range "^1.8.1"
     preserve "^0.2.0"
     repeat-element "^1.1.2"
+
+buffer-more-ints@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/buffer-more-ints/-/buffer-more-ints-0.0.2.tgz#26b3885d10fa13db7fc01aae3aab870199e0124c"
 
 buffer-writer@1.0.1:
   version "1.0.1"
@@ -1613,6 +1645,10 @@ jsonic@0.2.2, jsonic@0.2.x:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/jsonic/-/jsonic-0.2.2.tgz#127bb99df4d821652c48a23d025cf2b16e618491"
 
+jsonic@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/jsonic/-/jsonic-0.3.0.tgz#b545da95f54392e58b3dda05f5f2e377a6c9d1bf"
+
 jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
@@ -1757,12 +1793,20 @@ lodash.cond@^4.3.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.cond/-/lodash.cond-4.5.2.tgz#f471a1da486be60f6ab955d17115523dd1d255d5"
 
+lodash.curry@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.curry/-/lodash.curry-4.1.1.tgz#248e36072ede906501d75966200a86dab8b23170"
+
 lodash.defaults@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-3.1.2.tgz#c7308b18dbf8bc9372d701a73493c61192bd2e2c"
   dependencies:
     lodash.assign "^3.0.0"
     lodash.restparam "^3.0.0"
+
+lodash.flowright@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.flowright/-/lodash.flowright-3.5.0.tgz#2b5fff399716d7e7dc5724fe9349f67065184d67"
 
 lodash.isarguments@^3.0.0:
   version "3.1.0"
@@ -1779,6 +1823,10 @@ lodash.keys@^3.0.0:
     lodash._getnative "^3.0.0"
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
+
+lodash.pick@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
 
 lodash.restparam@^3.0.0:
   version "3.6.1"
@@ -2500,6 +2548,15 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
+"readable-stream@1.x >=1.1.9":
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
+
 readable-stream@2.3.3, readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
@@ -2713,6 +2770,17 @@ send@0.13.1:
     on-finished "~2.3.0"
     range-parser "~1.0.3"
     statuses "~1.2.1"
+
+seneca-amqp-transport@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/seneca-amqp-transport/-/seneca-amqp-transport-2.2.0.tgz#efc263602e663ffd2d273c2a4b950c6616fec61c"
+  dependencies:
+    amqplib "^0.5.1"
+    amqpuri "^1.1.0"
+    bluebird "^3.5.0"
+    jsonic "^0.3.0"
+    lodash "^4.17.4"
+    uuid "^3.1.0"
 
 seneca-basic@0.4.0:
   version "0.4.0"
@@ -3033,6 +3101,10 @@ string-width@^2.0.0, string-width@^2.1.0:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
 
+string_decoder@~0.10.x:
+  version "0.10.31"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
+
 string_decoder@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.0.3.tgz#0fc67d7c141825de94282dd536bec6b9bce860ab"
@@ -3263,7 +3335,7 @@ uuid@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
-uuid@^3.0.0:
+uuid@^3.0.0, uuid@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
