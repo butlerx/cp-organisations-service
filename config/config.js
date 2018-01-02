@@ -27,6 +27,7 @@ module.exports = (options) => {
         port: options && options.port ? options.port : 10309,
       },
     },
+    log: options && options.log ? options.log : undefined,
     default_plugins: { web: false }, // seneca-web is crashing on startup ?
     legacy: { error_codes: false, validate: false }, // needed if using Seneca 2.x
     timeout: 120000,

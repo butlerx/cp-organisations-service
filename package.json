@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "fix": "eslint . --fix",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js | bunyan"
   },
   "keywords": [
     "organisation",
