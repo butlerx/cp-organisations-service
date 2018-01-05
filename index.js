@@ -7,6 +7,8 @@ const config = require('./config/config.js')();
 const seneca = require('./imports')(config);
 const network = require('./network');
 
+if (process.env.NEW_RELIC_ENABLED === 'true') require('newrelic'); // eslint-disable-line global-require
+
 seneca.use(store, config['postgresql-store']);
 
 process.on('SIGINT', shutdown);
