@@ -6,10 +6,23 @@ const dgram = require('dgram');
 const config = require('./config/config.js')();
 const seneca = require('./imports')(config);
 const network = require('./network');
-
-if (process.env.NEW_RELIC_ENABLED === 'true') require('newrelic'); // eslint-disable-line global-require
+const senecaNR = require('seneca-newrelic');
+const newrelic = process.env.NEW_RELIC_ENABLED === 'true' ? require('newrelic') : undefined;
+const { isUndefined } = require('lodash');
 
 seneca.use(store, config['postgresql-store']);
+
+if (!isUndefined(newrelic)) {
+  seneca.use(senecaNR, {
+    newrelic,
+    roles: ['cd-oranisations'],
+    filter(p) {
+      p.user = p.user ? p.user.id : undefined;
+      p.login = p.login ? p.login.id : undefined;
+      return p;
+    },
+  });
+}
 
 process.on('SIGINT', shutdown);
 process.on('SIGTERM', shutdown);

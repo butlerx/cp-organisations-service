@@ -2989,6 +2989,10 @@ seneca-mem-store@0.6.0:
   dependencies:
     lodash "4.15.0"
 
+seneca-newrelic@wardormeur/seneca-newrelic:
+  version "0.0.1"
+  resolved "https://codeload.github.com/wardormeur/seneca-newrelic/tar.gz/7d58f553b7301ab114c391a77f6eea132e6d4af9"
+
 seneca-parambulator@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/seneca-parambulator/-/seneca-parambulator-0.2.0.tgz#1e2626ae95391f86d6d96a0a1589b8907bba210e"
